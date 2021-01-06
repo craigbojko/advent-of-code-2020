@@ -1,3 +1,4 @@
+import type { Solution } from '../index'
 import { default as List } from './data.json'
 
 const data: number[] = List
@@ -27,15 +28,17 @@ const part2 = (list: number[]): [number, number, number] | undefined => {
   }
 }
 
-export default {
-  part1,
-  part2
+const solution: Solution = {
+  part1: () => {
+    const resultPart1: [number, number] | undefined = part1([...data])
+    console.log(`Result: 1 = ${JSON.stringify(resultPart1)}`)
+    console.log(`Result: 1 = ${(resultPart1 && resultPart1.length > 1) && resultPart1[0] * resultPart1[1]}`)
+  },
+  part2: () => {
+    const resultPart2: [number, number, number] | undefined = part2([...data])
+    console.log(`Result: 2 = ${JSON.stringify(resultPart2)}`)
+    console.log(`Result: 2 = ${(resultPart2 && resultPart2.length > 2) && resultPart2[0] * resultPart2[1] * resultPart2[2]}`)
+  }
 }
-const resultPart1: [number, number] | undefined = part1([...data])
-const resultPart2: [number, number, number] | undefined = part2([...data])
 
-
-console.log(`Result: 1 = ${JSON.stringify(resultPart1)}`)
-console.log(`Result: 1 = ${(resultPart1 && resultPart1.length > 1) && resultPart1[0] * resultPart1[1]}`)
-console.log(`Result: 2 = ${JSON.stringify(resultPart2)}`)
-console.log(`Result: 2 = ${(resultPart2 && resultPart2.length > 2) && resultPart2[0] * resultPart2[1] * resultPart2[2]}`)
+export default solution

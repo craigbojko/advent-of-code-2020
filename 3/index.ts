@@ -1,3 +1,4 @@
+import type { Solution } from '../index'
 import fs from 'fs'
 
 type Track = string
@@ -74,24 +75,21 @@ const run = async (across?: number, down?: number): Promise<number> => {
   return trees
 }
 
-export default {
-  run
+const solution: Solution = {
+  part1: () => run().then((result: number) => {
+    console.log(`Result: 1 = ${JSON.stringify(result)}`)
+  }),
+  part2: () => Promise
+    .all([
+      [1,1],
+      [3,1],
+      [5,1],
+      [7,1],
+      [1,2],
+    ].map(([across, down]: number[]) => run(across, down)))
+    .then((results: number[]) => {
+      console.log(`Result: 2 ${JSON.stringify(results)} = ${results.reduce((a, b) => a * b, 1)}`)
+    })
 }
 
-// Part 1
-run().then((result: number) => {
-  console.log(`Result: 1 = ${JSON.stringify(result)}`)
-})
-
-// Part 2
-Promise
-  .all([
-    [1,1],
-    [3,1],
-    [5,1],
-    [7,1],
-    [1,2],
-  ].map(([across, down]: number[]) => run(across, down)))
-  .then((results: number[]) => {
-    console.log(`Result: 2 ${JSON.stringify(results)} = ${results.reduce((a, b) => a * b, 1)}`)
-  })
+export default solution

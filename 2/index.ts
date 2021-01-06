@@ -1,3 +1,4 @@
+import type { Solution } from '../index'
 import fs, { ReadStream } from 'fs'
 import rl, { Interface } from 'readline'
 
@@ -81,13 +82,13 @@ const run = async (validation: Function): Promise<number> => {
   return validPasswords
 }
 
-export default {
-  run
+const solution: Solution = {
+  part1: () => run(valid1).then((result: number) => {
+    console.log(`Result: 1 = ${JSON.stringify(result)}`)
+  }),
+  part2: () => run(valid2).then((result: number) => {
+    console.log(`Result: 2 = ${JSON.stringify(result)}`)
+  })
 }
 
-run(valid1).then((result: number) => {
-  console.log(`Result: 1 = ${JSON.stringify(result)}`)
-})
-run(valid2).then((result: number) => {
-  console.log(`Result: 2 = ${JSON.stringify(result)}`)
-})
+export default solution
