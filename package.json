@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start:1": "./node_modules/.bin/ts-node ./1/index.ts",
-    "start:2": "./node_modules/.bin/ts-node ./2/index.ts"
+    "start:2": "./node_modules/.bin/ts-node ./2/index.ts",
+    "start:3": "./node_modules/.bin/ts-node ./3/index.ts"
   },
   "devDependencies": {
     "@types/node": "^14.14.19"
