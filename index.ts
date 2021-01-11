@@ -23,7 +23,7 @@ export const problems = [
     if (problems[i - 1]) {
       const solution: Solution = problems[i - 1]
       solution.part1()
-      // solution.part2()
+      solution.part2()
     } else {
       console.warn(`Unable to obtain solution: arg ${argc}`)
       process.exit(1)
