@@ -2,10 +2,11 @@ import { default as problem1 } from './1'
 import { default as problem2 } from './2'
 import { default as problem3 } from './3'
 import { default as problem4 } from './4'
+import { default as problem5 } from './5'
 
 export interface Solution {
-  part1(): any,
-  part2(): any
+  part1(): any;
+  part2?(): any;
 }
 
 export const problems = [
@@ -13,6 +14,7 @@ export const problems = [
   problem2,
   problem3,
   problem4,
+  problem5,
 ]
 
 ;(function main () {
@@ -23,7 +25,7 @@ export const problems = [
     if (problems[i - 1]) {
       const solution: Solution = problems[i - 1]
       solution.part1()
-      solution.part2()
+      solution.part2 && solution.part2()
     } else {
       console.warn(`Unable to obtain solution: arg ${argc}`)
       process.exit(1)
