@@ -4,6 +4,7 @@ import { default as problem3 } from './3'
 import { default as problem4 } from './4'
 import { default as problem5 } from './5'
 import { default as problem6 } from './6'
+import { default as problem7 } from './7'
 
 export interface Solution {
   part1(): any;
@@ -17,6 +18,7 @@ export const problems = [
   problem4,
   problem5,
   problem6,
+  problem7,
 ]
 
 ;(function main () {
